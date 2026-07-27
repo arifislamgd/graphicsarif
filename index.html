@@ -592,23 +592,35 @@
 
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
+            <form action="https://formsubmit.co/graphicsdarif@gmail.com" method="POST" class="bg-light p-4 p-md-5 contact-form">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+    <input type="hidden" name="_next" value="https://arifislamgd.github.io/graphicsarif/thankyou.html">
+
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+    </div>
+
+    <div class="form-group">
+        <textarea name="message" rows="7" class="form-control" placeholder="Message" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary py-3 px-5">
+            Send Message
+        </button>
+    </div>
+
+</form>
           
           </div>
 

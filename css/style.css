@@ -8201,8 +8201,8 @@ h1, h2, h3, h4, h5,
     font-size: 16px;
     padding-top: .7rem;
     padding-bottom: .7rem;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 17px;
+    padding-right: 17px;
     color: #fff;
     font-weight: 400;
     opacity: 1 !important; }
@@ -8922,7 +8922,10 @@ h1, h2, h3, h4, h5,
 .ftco-hireme {
   background: #ffbd39;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
   .ftco-hireme h2 {
     color: #fff;
     font-size: 40px;
@@ -9248,7 +9251,8 @@ textarea.form-control {
 
 #section-counter {
   position: relative;
-  z-index: 0; }
+  z-index: 2; 
+  padding-bottom: 120px;}
 
 @media (max-width: 1199.98px) {
   .ftco-counter {

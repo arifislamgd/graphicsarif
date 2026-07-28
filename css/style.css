@@ -9687,3 +9687,127 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+
+    
+    /*==================================================
+                CUSTOM FOOTER
+==================================================*/
+
+.ftco-footer{
+    background:#000;
+    padding:70px 0 30px;
+}
+
+.ftco-footer-widget{
+    margin-bottom:30px;
+}
+
+.ftco-footer-widget h2{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.ftco-footer p{
+    line-height:1.9;
+    color:rgba(255,255,255,.75);
+}
+
+.ftco-footer hr{
+    border-color:rgba(255,255,255,.08);
+    margin:35px 0;
+}
+
+.ftco-footer a{
+    transition:.3s;
+}
+
+.ftco-footer a:hover{
+    color:#ffbd39 !important;
+    text-decoration:none;
+}
+
+.ftco-footer ul{
+    padding:0;
+    margin:0;
+}
+
+.ftco-footer ul li{
+    list-style:none;
+    margin-bottom:15px;
+}
+
+.ftco-footer ul li a{
+    color:rgba(255,255,255,.75);
+}
+
+.ftco-footer ul li a:hover{
+    padding-left:6px;
+}
+
+/* Social */
+
+.ftco-footer-social{
+    margin-top:25px!important;
+}
+
+.ftco-footer-social li{
+    display:inline-block;
+    margin-right:10px;
+}
+
+.ftco-footer-social li a{
+    width:50px;
+    height:50px;
+    background:#1a1a1a;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:22px;
+    transition:.3s;
+}
+
+.ftco-footer-social li a:hover{
+    background:#ffbd39;
+    color:#000!important;
+    transform:translateY(-5px);
+}
+
+/* Contact */
+
+.contact-footer li{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.contact-footer .icon{
+    color:#ffbd39;
+    margin-top:5px;
+    min-width:18px;
+}
+
+/* Copyright */
+
+.footer-credit{
+    color:#bbb;
+}
+
+.footer-credit a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-credit a:hover{
+    color:#ffbd39!important;
+}
+
+.footer-credit .heart{
+    color:#ffbd39;
+}

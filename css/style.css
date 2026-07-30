@@ -9811,3 +9811,35 @@ textarea.form-control {
 .footer-credit .heart{
     color:#ffbd39;
 }
+
+
+
+/* ==========================
+   Certification Section
+========================== */
+
+#certifications-section {
+    padding: 70px 0;
+}
+
+#certifications-section .row {
+    row-gap: 15px;
+}
+
+#certifications-section .resume-wrap {
+    height: 100%;
+    padding: 35px;
+}
+
+#certifications-section .heading-section {
+    margin-bottom: 50px !important;
+}
+
+
+.footer-qr{
+    width:140px;
+    height:140px;
+    background:#fff;
+    padding:10px;
+    border-radius:10px;
+}

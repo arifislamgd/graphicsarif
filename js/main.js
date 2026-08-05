@@ -275,3 +275,56 @@
 
 })(jQuery);
 
+
+
+
+/* Scroll Progress */
+
+(function () {
+
+    const progressWrap = document.getElementById("progress-wrap");
+
+    if (!progressWrap) return;
+
+    const progressPath = progressWrap.querySelector("path");
+
+    const pathLength = progressPath.getTotalLength();
+
+    progressPath.style.strokeDasharray = pathLength;
+    progressPath.style.strokeDashoffset = pathLength;
+
+    function updateProgress(){
+
+        const scroll = window.pageYOffset;
+
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = pathLength - (scroll * pathLength / height);
+
+        progressPath.style.strokeDashoffset = progress;
+
+        if(scroll > 200){
+            progressWrap.classList.add("active");
+        }else{
+            progressWrap.classList.remove("active");
+        }
+
+    }
+
+    updateProgress();
+
+    window.addEventListener("scroll", updateProgress);
+
+    progressWrap.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+})();
+

@@ -279,53 +279,64 @@
 
 
 
-/* Scroll Progress */
 
-(function () {
 
-    const progressWrap = document.getElementById("progress-wrap");
 
-    if (!progressWrap) return;
 
-    const progressPath = progressWrap.querySelector("path");
 
-    const pathLength = progressPath.getTotalLength();
+/*=========================================
+    FLOATING BUTTONS
+=========================================*/
+document.addEventListener("DOMContentLoaded", function () {
 
-    progressPath.style.strokeDasharray = pathLength;
-    progressPath.style.strokeDashoffset = pathLength;
+    const scrollBtn = document.getElementById("scrollTop");
+    const circle = document.querySelector(".progress-ring-circle");
 
-    function updateProgress(){
+    if (!scrollBtn || !circle) return;
 
-        const scroll = window.pageYOffset;
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
 
-        const height = document.documentElement.scrollHeight - window.innerHeight;
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = circumference;
 
-        const progress = pathLength - (scroll * pathLength / height);
+    function updateProgress() {
 
-        progressPath.style.strokeDashoffset = progress;
+        const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
 
-        if(scroll > 200){
-            progressWrap.classList.add("active");
-        }else{
-            progressWrap.classList.remove("active");
+        const scrollHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+
+        let progress = scrollTop / scrollHeight;
+
+        progress = Math.min(Math.max(progress, 0), 1);
+
+        circle.style.strokeDashoffset =
+            circumference - (progress * circumference);
+
+        // Show / Hide button
+        if (scrollTop > 250) {
+            scrollBtn.classList.add("active");
+        } else {
+            scrollBtn.classList.remove("active");
         }
-
     }
-
-    updateProgress();
 
     window.addEventListener("scroll", updateProgress);
 
-    progressWrap.addEventListener("click", function(e){
+    updateProgress();
+
+    scrollBtn.onclick = function (e) {
 
         e.preventDefault();
 
         window.scrollTo({
-            top:0,
-            behavior:"smooth"
+            top: 0,
+            behavior: "smooth"
         });
 
-    });
+    };
 
-})();
-
+});

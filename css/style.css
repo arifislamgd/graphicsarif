@@ -10881,200 +10881,6 @@ justify-content:center;
 
 
 
-/*==================================================
-MODERN ABOUT SECTION
-==================================================*/
-
-.about-modern{
-
-padding:100px 0;
-background:#000;
-
-}
-
-.about-image{
-
-position:relative;
-overflow:hidden;
-border-radius:25px;
-
-}
-
-.about-image img{
-
-width:100%;
-border-radius:25px;
-transition:.5s;
-
-}
-
-.about-image:hover img{
-
-transform:scale(1.05);
-
-}
-
-.experience-box{
-
-position:absolute;
-right:25px;
-bottom:25px;
-background:#ffbd39;
-padding:20px 30px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 15px 35px rgba(255,189,57,.35);
-
-}
-
-.experience-box h2{
-
-font-size:42px;
-font-weight:700;
-color:#111;
-margin:0;
-
-}
-
-.experience-box span{
-
-font-size:14px;
-font-weight:600;
-color:#111;
-
-}
-
-.about-description{
-
-color:#bdbdbd;
-font-size:17px;
-line-height:1.9;
-margin-bottom:18px;
-
-}
-
-.about-item{
-
-display:flex;
-flex-direction:column;
-padding:15px 0;
-border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-.about-item strong{
-
-color:#ffbd39;
-font-size:14px;
-text-transform:uppercase;
-letter-spacing:1px;
-
-}
-
-.about-item span{
-
-color:#ffffff;
-font-size:16px;
-margin-top:5px;
-
-}
-
-.about-stats{
-
-display:flex;
-gap:50px;
-margin-top:35px;
-margin-bottom:20px;
-
-}
-
-.about-stats h3{
-
-font-size:40px;
-font-weight:700;
-color:#ffbd39;
-margin-bottom:5px;
-
-}
-
-.about-stats p{
-
-color:#999;
-font-size:14px;
-text-transform:uppercase;
-letter-spacing:2px;
-margin:0;
-
-}
-
-.about-modern .btn{
-
-border-radius:50px;
-font-weight:600;
-padding:15px 35px;
-
-}
-
-.about-modern .btn:hover{
-
-transform:translateY(-5px);
-
-}
-
-@media(max-width:991px){
-
-.about-modern{
-
-text-align:center;
-
-}
-
-.about-stats{
-
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-
-}
-
-.experience-box{
-
-right:15px;
-bottom:15px;
-
-}
-
-}
-
-@media(max-width:576px){
-
-.about-stats{
-
-flex-direction:column;
-gap:20px;
-
-}
-
-.experience-box{
-
-padding:15px 20px;
-
-}
-
-.experience-box h2{
-
-font-size:30px;
-
-}
-
-}
-
-
-
-
-
-
-
 
 
 /*==================================================
@@ -11084,7 +10890,7 @@ font-size:30px;
 .hero-section{
     position:relative;
     background:#000;
-    overflow:hidden;
+    overflow:visible;
 }
 
 .hero-overlay{
@@ -11111,9 +10917,10 @@ font-size:30px;
 ==========================*/
 
 .hero-content{
-    color:#fff;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
 }
-
 .hero-badge{
 
     display:inline-block;
@@ -11165,26 +10972,74 @@ font-size:30px;
 
 }
 
-/*==========================
-        BUTTONS
-==========================*/
+
+/*==================================================
+                HERO BUTTONS 2026
+==================================================*/
 
 .hero-buttons{
 
     display:flex;
-    gap:18px;
+
+    gap:20px;
+
     flex-wrap:wrap;
+
+    margin-top:40px;
+
     margin-bottom:55px;
 
 }
 
+/*==========================
+      Base Button
+==========================*/
+
+.hero-btn,
+.hero-btn-outline{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:200px;
+
+    padding:16px 40px;
+
+    border-radius:60px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+    overflow:hidden;
+
+    transition:all .4s ease;
+
+}
+
+/*==========================
+    Primary Button
+==========================*/
+
 .hero-btn{
 
-    padding:16px 42px;
-    border-radius:50px;
-    font-weight:600;
-    font-size:15px;
-    transition:.35s;
+    background:#ffbd39;
+
+    color:#000 !important;
+
+    border:none;
+
+    box-shadow:
+        0 15px 35px rgba(255,189,57,.25);
 
 }
 
@@ -11192,25 +11047,123 @@ font-size:30px;
 
     transform:translateY(-6px);
 
+    background:#ffd25a;
+
+    box-shadow:
+        0 22px 45px rgba(255,189,57,.45),
+        0 0 35px rgba(255,189,57,.25);
+
 }
+
+/*==========================
+    Glass Outline Button
+==========================*/
 
 .hero-btn-outline{
 
-    padding:16px 42px;
-    border-radius:50px;
-    border:2px solid #ffffff;
-    color:#ffffff;
-    transition:.35s;
+    background:rgba(255,255,255,.05);
+
+    color:#ffffff !important;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
 
 }
 
 .hero-btn-outline:hover{
 
     background:#ffbd39;
+
+    color:#000 !important;
+
     border-color:#ffbd39;
-    color:#000;
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 22px 45px rgba(255,189,57,.35);
 
 }
+
+/*==========================
+      Shine Animation
+==========================*/
+
+.hero-btn::before,
+.hero-btn-outline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-130%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.8s;
+
+}
+
+.hero-btn:hover::before,
+.hero-btn-outline:hover::before{
+
+    left:160%;
+
+}
+
+/*==========================
+      Active Click
+==========================*/
+
+.hero-btn:active,
+.hero-btn-outline:active{
+
+    transform:scale(.96);
+
+}
+
+/*==========================
+      Responsive
+==========================*/
+
+@media(max-width:768px){
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-btn,
+.hero-btn-outline{
+
+    width:100%;
+
+    min-width:100%;
+
+}
+
+}
+
+
+
+
 
 /*==========================
         STATISTICS
@@ -11243,29 +11196,188 @@ font-size:30px;
 
 }
 
-/*==========================
-        SOCIAL ICONS
-==========================*/
+
+
+/*==================================================
+            SOCIAL ICONS 2026
+==================================================*/
 
 .hero-social{
 
     display:flex;
+
+    align-items:center;
+
     gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:40px;
 
 }
 
 .hero-social a{
 
-    width:48px;
-    height:48px;
+    position:relative;
+
+    width:58px;
+
+    height:58px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
+    text-decoration:none;
+
     border-radius:50%;
-    border:1px solid rgba(255,255,255,.15);
-    background:rgba(255,255,255,.03);
+
     color:#ffffff;
+
+    font-size:20px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:all .4s ease;
+
+}
+
+/* Gold Ring */
+
+.hero-social a::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #ffbd39,
+        transparent,
+        #ffbd39
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:-1;
+
+}
+
+/* Shine Effect */
+
+.hero-social a::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-100%;
+
+    width:200%;
+
+    height:200%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.30),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+/* Icon */
+
+.hero-social a i{
+
+    font-size:20px;
+
     transition:.35s;
+
+}
+
+/* Hover */
+
+.hero-social a:hover{
+
+    background:#ffbd39;
+
+    color:#000;
+
+    border-color:#ffbd39;
+
+    transform:translateY(-8px) scale(1.08);
+
+    box-shadow:
+        0 18px 40px rgba(255,189,57,.35);
+
+}
+
+.hero-social a:hover::before{
+
+    opacity:1;
+
+}
+
+.hero-social a:hover::after{
+
+    top:100%;
+
+    left:100%;
+
+}
+
+/* Click */
+
+.hero-social a:active{
+
+    transform:scale(.95);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero-social{
+
+    justify-content:center;
+
+    gap:14px;
+
+}
+
+.hero-social a{
+
+    width:50px;
+
+    height:50px;
 
 }
 
@@ -11275,14 +11387,19 @@ font-size:30px;
 
 }
 
-.hero-social a:hover{
-
-    background:#ffbd39;
-    color:#000;
-    transform:translateY(-6px);
-    border-color:#ffbd39;
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*==========================
         IMAGE
@@ -11390,10 +11507,10 @@ transform:translateY(0);
 @media (max-width:991px){
 
 .hero-wrapper{
-
-padding:120px 0 80px;
-text-align:center;
-
+    min-height:100vh;
+    position:relative;
+    z-index:2;
+    padding:150px 0 140px;
 }
 
 .hero-title{
@@ -12179,22 +12296,43 @@ font-size:20px;
 /*==========================
  Floating Card
 ==========================*/
-
 .experience-card{
     position:absolute;
     right:10px;
     bottom:10px;
-    background:#111;
+
     padding:25px 35px;
+
     border-radius:18px;
-    box-shadow:0 20px 40px rgba(0,0,0,.45);
-    border:1px solid rgba(255,189,57,.18);
 
+    /* Glass Effect */
+    background:rgba(20,20,20,.45);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
 
-    transition:.35s;
+    border:1px solid rgba(255,255,255,.12);
 
-    
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    transition:.35s ease;
 }
+
+.experience-card:hover{
+
+    background:rgba(20,20,20,.60);
+
+    border-color:rgba(255,189,57,.35);
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 30px rgba(255,189,57,.15);
+
+}
+
 
 .experience-card h2{
     color:#ffbd39;
@@ -12253,8 +12391,11 @@ font-size:20px;
     margin-bottom:45px;
 }
 
+
+
+
 /*==========================
- Counter Cards
+        Counter Cards 2026
 ==========================*/
 
 .counter-row{
@@ -12262,31 +12403,105 @@ font-size:20px;
 }
 
 .counter-box{
-    background:#111;
-    padding:30px 15px;
+
+    position:relative;
+
+    padding:32px 20px;
+
     text-align:center;
-    border-radius:18px;
-    transition:.35s;
-    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    /* Glass Effect */
+    background:rgba(20,20,20,.45);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:.4s ease;
+
 }
+
+/* Top Glow */
+
+.counter-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #ffbd39,
+        transparent
+    );
+
+    opacity:.6;
+
+}
+
+/* Hover */
 
 .counter-box:hover{
+
     transform:translateY(-8px);
-    border-color:#ffbd39;
-    box-shadow:0 20px 35px rgba(255,189,57,.15);
+
+    background:rgba(20,20,20,.60);
+
+    border-color:rgba(255,189,57,.35);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.45),
+        0 0 35px rgba(255,189,57,.15);
+
 }
+
+/* Number */
 
 .counter-box h3{
+
     color:#ffbd39;
-    font-size:38px;
+
+    font-size:42px;
+
     font-weight:800;
-    margin-bottom:10px;
+
+    margin-bottom:12px;
+
 }
 
+/* Text */
+
 .counter-box span{
-    color:#ddd;
+
+    color:#d5d5d5;
+
     font-size:15px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
 }
+
+
+
+
 
 /*==========================
  Expertise
@@ -12322,45 +12537,362 @@ font-size:20px;
     transform:translateX(8px);
 }
 
+
+
+
 /*==========================
- Buttons
+        Buttons 2026
 ==========================*/
 
 .about-buttons{
+
     margin-top:45px;
+
     display:flex;
+
     gap:20px;
+
     flex-wrap:wrap;
+
 }
+
+/* Base Button */
 
 .about-buttons .btn{
-    padding:14px 38px;
+
+    position:relative;
+
+    padding:16px 40px;
+
     border-radius:50px;
-    font-weight:600;
-    transition:.35s;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+    overflow:hidden;
+
+    transition:.4s ease;
+
 }
 
+/*==========================
+    Primary Button
+==========================*/
+
 .about-buttons .btn-primary{
+
     background:#ffbd39;
+
     color:#000;
+
     border:none;
+
+    box-shadow:0 12px 30px rgba(255,189,57,.25);
+
 }
 
 .about-buttons .btn-primary:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(255,189,57,.35);
+
+    background:#ffd25c;
+
+    color:#000;
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(255,189,57,.45),
+        0 0 25px rgba(255,189,57,.30);
+
 }
 
+/*==========================
+    Outline Button
+==========================*/
+
 .about-buttons .btn-outline-light{
-    border:2px solid #fff;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.18);
+
     color:#fff;
+
 }
 
 .about-buttons .btn-outline-light:hover{
+
     background:#ffbd39;
+
     color:#000;
+
     border-color:#ffbd39;
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(255,189,57,.35);
+
 }
+
+/*==========================
+    Shine Effect
+==========================*/
+
+.about-buttons .btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.about-buttons .btn:hover::before{
+
+    left:150%;
+
+}
+
+/*==========================
+    Mobile
+==========================*/
+
+@media(max-width:768px){
+
+.about-buttons{
+
+    justify-content:center;
+
+}
+
+.about-buttons .btn{
+
+    width:100%;
+
+}
+
+}
+
+
+
+
+
+
+/*==================================================
+MODERN ABOUT SECTION
+==================================================*/
+
+.about-modern{
+
+padding:100px 0;
+background:#000;
+
+}
+
+.about-image{
+
+position:relative;
+overflow:hidden;
+border-radius:25px;
+
+}
+
+.about-image img{
+
+width:100%;
+border-radius:25px;
+transition:.5s;
+
+}
+
+.about-image:hover img{
+
+transform:scale(1.05);
+
+}
+
+.experience-box{
+
+position:absolute;
+right:25px;
+bottom:25px;
+background:#ffbd39;
+padding:20px 30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 15px 35px rgba(255,189,57,.35);
+
+}
+
+.experience-box h2{
+
+font-size:42px;
+font-weight:700;
+color:#111;
+margin:0;
+
+}
+
+.experience-box span{
+
+font-size:14px;
+font-weight:600;
+color:#111;
+
+}
+
+.about-description{
+
+color:#bdbdbd;
+font-size:17px;
+line-height:1.9;
+margin-bottom:18px;
+
+}
+
+.about-item{
+
+display:flex;
+flex-direction:column;
+padding:15px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.about-item strong{
+
+color:#ffbd39;
+font-size:14px;
+text-transform:uppercase;
+letter-spacing:1px;
+
+}
+
+.about-item span{
+
+color:#ffffff;
+font-size:16px;
+margin-top:5px;
+
+}
+
+.about-stats{
+
+display:flex;
+gap:50px;
+margin-top:35px;
+margin-bottom:20px;
+
+}
+
+.about-stats h3{
+
+font-size:40px;
+font-weight:700;
+color:#ffbd39;
+margin-bottom:5px;
+
+}
+
+.about-stats p{
+
+color:#999;
+font-size:14px;
+text-transform:uppercase;
+letter-spacing:2px;
+margin:0;
+
+}
+
+.about-modern .btn{
+
+border-radius:50px;
+font-weight:600;
+padding:15px 35px;
+
+}
+
+.about-modern .btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+@media(max-width:991px){
+
+.about-modern{
+
+text-align:center;
+
+}
+
+.about-stats{
+
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+
+}
+
+.experience-box{
+
+right:15px;
+bottom:15px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.about-stats{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+.experience-box{
+
+padding:15px 20px;
+
+}
+
+.experience-box h2{
+
+font-size:30px;
+
+}
+
+}
+
+
+
 
 
 

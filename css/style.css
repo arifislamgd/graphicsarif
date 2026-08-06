@@ -12182,13 +12182,18 @@ font-size:20px;
 
 .experience-card{
     position:absolute;
-    right:-20px;
-    bottom:40px;
+    right:10px;
+    bottom:10px;
     background:#111;
     padding:25px 35px;
     border-radius:18px;
     box-shadow:0 20px 40px rgba(0,0,0,.45);
     border:1px solid rgba(255,189,57,.18);
+
+
+    transition:.35s;
+
+    
 }
 
 .experience-card h2{
@@ -12202,6 +12207,13 @@ font-size:20px;
     color:#ddd;
     margin:0;
     font-size:15px;
+}
+
+
+.experience-card:hover{
+    transform:translateY(-8px);
+    border-color:#ffbd39;
+    box-shadow:0 20px 35px rgba(255,189,57,.15);
 }
 
 /*==========================

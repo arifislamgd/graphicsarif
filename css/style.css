@@ -14799,6 +14799,45 @@ height:55px;
 
 }
 
+
+/*=====================================
+    PREMIUM TEXT SLIDE EFFECT
+=====================================*/
+
+.hover-slide{
+    position:relative;
+    overflow:hidden;
+}
+
+.hover-slide .text{
+    display:block;
+    transition:.45s cubic-bezier(.22,.61,.36,1);
+}
+
+.hover-slide .text-top{
+    transform:translateY(0);
+}
+
+.hover-slide .text-bottom{
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    transform:translateY(150%);
+    text-align:center;
+}
+
+.hover-slide:hover .text-top{
+    transform:translateY(-180%);
+}
+
+.hover-slide:hover .text-bottom{
+    transform:translateY(-50%);
+}
+
+
+
+
 .nav-btn-outline:hover{
 
     background:#fff;

@@ -411,7 +411,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+/*=========================================
+    SMOOTH SCROLL NAVIGATION
+=========================================*/
 
+$('.navbar-nav a[href^="#"], .nav-buttons a[href^="#"]').on('click', function(e){
+
+    e.preventDefault();
+
+    var target = $(this.getAttribute('href'));
+
+    if(target.length){
+
+        $('html, body').stop().animate({
+
+            scrollTop: target.offset().top - 90
+
+        }, 900, 'swing');
+
+    }
+
+    // Close mobile menu
+    $('.navbar-collapse').collapse('hide');
+
+});
+
+
+
+
+
+
+/*=========================================
+    ACTIVE MENU ON SCROLL
+=========================================*/
+
+$(window).on('scroll', function(){
+
+    var scrollPos = $(document).scrollTop() + 120;
+
+    $('.navbar-nav .nav-link').each(function(){
+
+        var currLink = $(this);
+
+        var refElement = $(currLink.attr("href"));
+
+        if(refElement.length){
+
+            if(refElement.position().top <= scrollPos &&
+               refElement.position().top + refElement.height() > scrollPos){
+
+                $('.navbar-nav .nav-item').removeClass("active");
+
+                currLink.parent().addClass("active");
+
+            }
+
+        }
+
+    });
+
+});
 
 
 

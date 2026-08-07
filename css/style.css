@@ -13930,6 +13930,105 @@ height:55px;
 
 }
 
+
+/*=========================================
+        PREMIUM LOGO ANIMATION
+=========================================*/
+
+.navbar-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+}
+
+/* Logo */
+
+.navbar-brand img{
+
+    width:46px;
+
+    height:46px;
+
+    object-fit:contain;
+
+    transition:all .45s cubic-bezier(.23,1,.32,1);
+
+    transform-origin:center;
+
+    filter:drop-shadow(0 0 0 rgba(255,189,57,0));
+
+}
+
+/* Text */
+
+.navbar-brand span{
+
+    color:#fff;
+
+    font-size:24px;
+
+    font-weight:800;
+
+    transition:all .35s ease;
+
+}
+
+/* Hover */
+
+.navbar-brand:hover img{
+
+    transform:rotate(-12deg) scale(1.15);
+
+    animation:logoFloat .9s ease-in-out infinite alternate;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,189,57,.45))
+        drop-shadow(0 0 25px rgba(255,189,57,.25));
+
+}
+
+/* Text Hover */
+
+.navbar-brand:hover span{
+
+    color:#ffbd39;
+
+    letter-spacing:.8px;
+
+}
+
+/* Floating Animation */
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:
+        rotate(-10deg)
+        scale(1.12)
+        translateY(0);
+
+    }
+
+    100%{
+
+        transform:
+        rotate(10deg)
+        scale(1.18)
+        translateY(-4px);
+
+    }
+
+}
+
+
+
 .navbar-brand img{
 
     width:42px;
